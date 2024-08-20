@@ -170,3 +170,14 @@ textStorage.removeItem("Max");
 console.log(textStorage.getItems());
 
 const numberStorage = new DataStorage<number>();
+
+interface Course {
+  title: string;
+  duration: string;
+}
+
+let course: Course = {}; // error since properties are missing
+let course2: Partial<Course> = {}; // temporarily makes these properties as optional
+course2.title = "Typescript";
+course2.duration = "1 month";
+let result = course2 as Course; // so course2 is like temp variable
